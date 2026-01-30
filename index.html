@@ -7,7 +7,7 @@
   <style>
     body {
       font-family: Roboto, sans-serif;
-      background: #00000;
+      background: #C9DBF0;
       margin: 0;
       padding: 20px;
     }
@@ -51,7 +51,7 @@
       margin-bottom: 6px;
       border: 1px solid #eee;
       font-size: 10px;
-      cursor: pointer; /* biar kerasa bisa diklik */
+      cursor: pointer;
       transition: background 0.15s, transform 0.05s;
     }
     ul.pricelist li:nth-child(odd) {
@@ -65,7 +65,7 @@
       font-weight: 500;
     }
     .item-code {
-      display: none
+      display: none;
     }
     .item-price {
       font-weight: 600;
@@ -84,7 +84,8 @@
       font-size: 12px;
       margin-top: 4px;
     }
-    form input {
+    form input,
+    form select {
       padding: 8px;
       border-radius: 8px;
       border: 1px solid #dddddd;
@@ -97,438 +98,65 @@
       border-radius: 999px;
       font-weight: 600;
       cursor: pointer;
-      background: #4E5E7D; 
+      background: #4E5E7D;
       color: #ffffff;
       font-size: 13px;
+    }
+
+    .qty-wrapper {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .qty-btn {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      border: 1px solid #cccccc;
+      background: #f5f5f5;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .qty-btn:active {
+      background: #e0e0e0;
+    }
+    #orderQty {
+      width: 48px;
+      text-align: center;
     }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>Mobile Legends – Indonesia</h1>
+    <div class="subtitle">Klik produk untuk auto pilih di form</div>
 
-       <div class="section">
+    <!-- SECTION: FIRST TOP UP -->
+    <div class="section">
       <div class="section-title">Double Diamond — First Top Up</div>
-      <ul class="pricelist">
-        <li data-item="100 (50+50) Diamonds - First Top Up" data-price="16623">
-          <span class="item-name">100 (50+50) Diamonds - First Top Up<span class="item-code">MLBB_ID_100TU</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="300 (150+150) Diamonds - First Top Up" data-price="47823">
-          <span class="item-name">300 (150+150) Diamonds - First Top Up<span class="item-code">MLBB_ID_300TU</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="500 (250+250) Diamonds - First Top Up" data-price="79528">
-          <span class="item-name">500 (250+250) Diamonds - First Top Up<span class="item-code">MLBB_ID_500TU</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="1000 (500+500) Diamonds - First Top Up" data-price="159801">
-          <span class="item-name">1000 (500+500) Diamonds - First Top Up<span class="item-code">MLBB_ID_1000TU</span></span>
-          <span class="item-price"></span>
-        </li>
-      </ul>
-       </div>
-        
-    <div class="section">
-      <div class="section-title">Diamonds (Small)</div>
-      <ul class="pricelist">
-        <li data-item="5 (5+0) Diamonds" data-price="2359">
-          <span class="item-name">5 (5+0) Diamonds<span class="item-code">MLBB_ID_5</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="10 (9+1) Diamonds" data-price="3857">
-          <span class="item-name">10 (9+1) Diamonds<span class="item-code">MLBB_ID_10</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="12 (11+1) Diamonds" data-price="4302">
-          <span class="item-name">12 (11+1) Diamonds<span class="item-code">MLBB_ID_12</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="14 (13+1) Diamonds" data-price="4843">
-          <span class="item-name">14 (13+1) Diamonds<span class="item-code">MLBB_ID_14</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="15 (15+0) Diamonds" data-price="5276">
-          <span class="item-name">15 (15+0) Diamonds<span class="item-code">MLBB_ID_15</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="17 (16+1) Diamonds" data-price="5443">
-          <span class="item-name">17 (16+1) Diamonds<span class="item-code">MLBB_ID_17</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="18 (17+1) Diamonds" data-price="5828">
-          <span class="item-name">18 (17+1) Diamonds<span class="item-code">MLBB_ID_18</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="19 (17+2) Diamonds" data-price="6347">
-          <span class="item-name">19 (17+2) Diamonds<span class="item-code">MLBB_ID_19</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="20 (18+2) Diamonds" data-price="6914">
-          <span class="item-name">20 (18+2) Diamonds<span class="item-code">MLBB_ID_20</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="22 (20+2) Diamonds" data-price="7358">
-          <span class="item-name">22 (20+2) Diamonds<span class="item-code">MLBB_ID_22</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="28 (25+3) Diamonds" data-price="8777">
-          <span class="item-name">28 (25+3) Diamonds<span class="item-code">MLBB_ID_28</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="30 (28+2) Diamonds" data-price="9330">
-          <span class="item-name">30 (28+2) Diamonds<span class="item-code">MLBB_ID_30</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="33 (30+3) Diamonds" data-price="10086">
-          <span class="item-name">33 (30+3) Diamonds<span class="item-code">MLBB_ID_33</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="36 (33+3) Diamonds" data-price="10855">
-          <span class="item-name">36 (33+3) Diamonds<span class="item-code">MLBB_ID_36</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="34 (31+3) Diamonds" data-price="10856">
-          <span class="item-name">34 (31+3) Diamonds<span class="item-code">MLBB_ID_34</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="44 (40+4) Diamonds" data-price="12666">
-          <span class="item-name">44 (40+4) Diamonds<span class="item-code">MLBB_ID_44</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="42 (38+4) Diamonds" data-price="12720">
-          <span class="item-name">42 (38+4) Diamonds<span class="item-code">MLBB_ID_42</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="45 (42+3) Diamonds" data-price="13745">
-          <span class="item-name">45 (42+3) Diamonds<span class="item-code">MLBB_ID_45</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="46 (42+4) Diamonds" data-price="13812">
-          <span class="item-name">46 (42+4) Diamonds<span class="item-code">MLBB_ID_46</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="50 (46+4) Diamonds" data-price="14628">
-          <span class="item-name">50 (46+4) Diamonds<span class="item-code">MLBB_ID_50</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="54 (49+5) Diamonds" data-price="15623">
-          <span class="item-name">54 (49+5) Diamonds<span class="item-code">MLBB_ID_54</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="56 (51+5) Diamonds" data-price="16067">
-          <span class="item-name">56 (51+5) Diamonds<span class="item-code">MLBB_ID_56</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="59 (53+6) Diamonds" data-price="16553">
-          <span class="item-name">59 (53+6) Diamonds<span class="item-code">MLBB_ID_59</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="60 (55+5) Diamonds" data-price="17754">
-          <span class="item-name">60 (55+5) Diamonds<span class="item-code">MLBB_ID_60</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="64 (58+6) Diamonds" data-price="18112">
-          <span class="item-name">64 (58+6) Diamonds<span class="item-code">MLBB_ID_64</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="67 (62+5) Diamonds" data-price="19152">
-          <span class="item-name">67 (62+5) Diamonds<span class="item-code">MLBB_ID_67</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="65 (59+6) Diamonds" data-price="19258">
-          <span class="item-name">65 (59+6) Diamonds<span class="item-code">MLBB_ID_65</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="66 (61+5) Diamonds" data-price="19269">
-          <span class="item-name">66 (61+5) Diamonds<span class="item-code">MLBB_ID_66</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="71 (64+7) Diamonds" data-price="20055">
-          <span class="item-name">71 (64+7) Diamonds<span class="item-code">MLBB_ID_71</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="70 (64+6) Diamonds" data-price="20716">
-          <span class="item-name">70 (64+6) Diamonds<span class="item-code">MLBB_ID_70</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="74 (67+7) Diamonds" data-price="20809">
-          <span class="item-name">74 (67+7) Diamonds<span class="item-code">MLBB_ID_74</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="78 (70+8) Diamonds" data-price="21999">
-          <span class="item-name">78 (70+8) Diamonds<span class="item-code">MLBB_ID_78</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="75 (68+7) Diamonds" data-price="22215">
-          <span class="item-name">75 (68+7) Diamonds<span class="item-code">MLBB_ID_75</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="80 (73+7) Diamonds" data-price="22621">
-          <span class="item-name">80 (73+7) Diamonds<span class="item-code">MLBB_ID_80</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="85 (77+8) Diamonds" data-price="23457">
-          <span class="item-name">85 (77+8) Diamonds<span class="item-code">MLBB_ID_85</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="84 (76+8) Diamonds" data-price="23765">
-          <span class="item-name">84 (76+8) Diamonds<span class="item-code">MLBB_ID_84</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="83 (75+8) Diamonds" data-price="23811">
-          <span class="item-name">83 (75+8) Diamonds<span class="item-code">MLBB_ID_83</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="88 (80+8) Diamonds" data-price="24751">
-          <span class="item-name">88 (80+8) Diamonds<span class="item-code">MLBB_ID_88</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="89 (81+8) Diamonds" data-price="24982">
-          <span class="item-name">89 (81+8) Diamonds<span class="item-code">MLBB_ID_89</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="92 (84+8) Diamonds" data-price="25737">
-          <span class="item-name">92 (84+8) Diamonds<span class="item-code">MLBB_ID_92</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="98 (89+9) Diamonds" data-price="27611">
-          <span class="item-name">98 (89+9) Diamonds<span class="item-code">MLBB_ID_98</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="100 (91+9) Diamonds" data-price="27872">
-          <span class="item-name">100 (91+9) Diamonds<span class="item-code">MLBB_ID_100</span></span>
-          <span class="item-price"></span>
-        </li>
-      </ul>
+      <ul class="pricelist" id="listFirstTopUp"></ul>
     </div>
 
+    <!-- SECTION: DIAMONDS -->
     <div class="section">
-      <div class="section-title">Weekly &amp; Twilight Pass</div>
-      <ul class="pricelist">
-        <li data-item="Weekly Diamond Pass (Promo)" data-price="28900">
-          <span class="item-name">Weekly Diamond Pass (Promo)<span class="item-code">MLBB_ID_WDP-PROMO</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="Weekly Diamond Pass" data-price="29310">
-          <span class="item-name">Weekly Diamond Pass<span class="item-code">MLBB_ID_WDP</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="2x Weekly Diamond Pass" data-price="57520">
-          <span class="item-name">2x Weekly Diamond Pass<span class="item-code">MLBB_ID_WDPX2</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="3x Weekly Diamond Pass" data-price="86323">
-          <span class="item-name">3x Weekly Diamond Pass<span class="item-code">MLBB_ID_WDPX3</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="4x Weekly Diamond Pass" data-price="115097">
-          <span class="item-name">4x Weekly Diamond Pass<span class="item-code">MLBB_ID_WDPX4</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="5x Weekly Diamond Pass" data-price="143871">
-          <span class="item-name">5x Weekly Diamond Pass<span class="item-code">MLBB_ID_WDPX5</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="Twilight Pass" data-price="148447">
-          <span class="item-name">Twilight Pass<span class="item-code">MLBB_ID_TP</span></span>
-          <span class="item-price"></span>
-        </li>
-      </ul>
+      <div class="section-title">Diamonds</div>
+      <ul class="pricelist" id="listDiamonds"></ul>
     </div>
 
+    <!-- SECTION: WEEKLY PASS -->
     <div class="section">
-      <div class="section-title">Diamonds (Medium–Large)</div>
-      <ul class="pricelist">
-        <li data-item="110 (100+10) Diamonds" data-price="30663">
-          <span class="item-name">110 (100+10) Diamonds<span class="item-code">MLBB_ID_110</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="113 (102+11) Diamonds" data-price="31234">
-          <span class="item-name">113 (102+11) Diamonds<span class="item-code">MLBB_ID_113</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="112 (101+11) Diamonds" data-price="31542">
-          <span class="item-name">112 (101+11) Diamonds<span class="item-code">MLBB_ID_112</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="116 (105+11) Diamonds" data-price="32528">
-          <span class="item-name">116 (105+11) Diamonds<span class="item-code">MLBB_ID_116</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="129 (117+12) Diamonds" data-price="35122">
-          <span class="item-name">129 (117+12) Diamonds<span class="item-code">MLBB_ID_129</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="128 (116+12) Diamonds" data-price="35431">
-          <span class="item-name">128 (116+12) Diamonds<span class="item-code">MLBB_ID_128</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="148 (134+14) Diamonds" data-price="40517">
-          <span class="item-name">148 (134+14) Diamonds<span class="item-code">MLBB_ID_148</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="170 (154+16) Diamonds" data-price="45813">
-          <span class="item-name">170 (154+16) Diamonds<span class="item-code">MLBB_ID_170</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="176 (160+16) Diamonds" data-price="48402">
-          <span class="item-name">176 (160+16) Diamonds<span class="item-code">MLBB_ID_176</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="184 (167+17) Diamonds" data-price="51568">
-          <span class="item-name">184 (167+17) Diamonds<span class="item-code">MLBB_ID_184</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="222 (200+22) Diamonds" data-price="60224">
-          <span class="item-name">222 (200+22) Diamonds<span class="item-code">MLBB_ID_222</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="240 (217+23) Diamonds" data-price="64149">
-          <span class="item-name">240 (217+23) Diamonds<span class="item-code">MLBB_ID_240</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="241 (218+23) Diamonds" data-price="65625">
-          <span class="item-name">241 (218+23) Diamonds<span class="item-code">MLBB_ID_241</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="277 (250+27) Diamonds" data-price="75384">
-          <span class="item-name">277 (250+27) Diamonds<span class="item-code">MLBB_ID_277</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="284 (257+27) Diamonds" data-price="76209">
-          <span class="item-name">284 (257+27) Diamonds<span class="item-code">MLBB_ID_284</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="296 (256+40) Diamonds" data-price="79137">
-          <span class="item-name">296 (256+40) Diamonds<span class="item-code">MLBB_ID_296</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="305 (276+29) Diamonds" data-price="83426">
-          <span class="item-name">305 (276+29) Diamonds<span class="item-code">MLBB_ID_305</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="370 (333+37) Diamonds" data-price="100511">
-          <span class="item-name">370 (333+37) Diamonds<span class="item-code">MLBB_ID_370</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="366 (333+33) Diamonds" data-price="102955">
-          <span class="item-name">366 (333+33) Diamonds<span class="item-code">MLBB_ID_366</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="384 (346+38) Diamonds" data-price="104532">
-          <span class="item-name">384 (346+38) Diamonds<span class="item-code">MLBB_ID_384</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="408 (367+41) Diamonds" data-price="108834">
-          <span class="item-name">408 (367+41) Diamonds<span class="item-code">MLBB_ID_408</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="406 (366+40) Diamonds" data-price="110562">
-          <span class="item-name">406 (366+40) Diamonds<span class="item-code">MLBB_ID_406</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="518 (467+51) Diamonds" data-price="140715">
-          <span class="item-name">518 (467+51) Diamonds<span class="item-code">MLBB_ID_518</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="568 (503+65) Diamonds" data-price="148447">
-          <span class="item-name">568 (503+65) Diamonds<span class="item-code">MLBB_ID_568</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="554 (500+54) Diamonds" data-price="150767">
-          <span class="item-name">554 (500+54) Diamonds<span class="item-code">MLBB_ID_554</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="716 (637+79) Diamonds" data-price="188652">
-          <span class="item-name">716 (637+79) Diamonds<span class="item-code">MLBB_ID_716</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="750 (668+82) Diamonds" data-price="197523">
-          <span class="item-name">750 (668+82) Diamonds<span class="item-code">MLBB_ID_750</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="749 (671+78) Diamonds" data-price="205909">
-          <span class="item-name">749 (671+78) Diamonds<span class="item-code">MLBB_ID_749</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="790 (703+87) Diamonds" data-price="208753">
-          <span class="item-name">790 (703+87) Diamonds<span class="item-code">MLBB_ID_790</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="875 (774+101) Diamonds" data-price="227537">
-          <span class="item-name">875 (774+101) Diamonds<span class="item-code">MLBB_ID_875</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="874 (779+95) Diamonds" data-price="231872">
-          <span class="item-name">874 (779+95) Diamonds<span class="item-code">MLBB_ID_874</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="966 (836+130) Diamonds" data-price="251276">
-          <span class="item-name">966 (836+130) Diamonds<span class="item-code">MLBB_ID_966</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="1048 (936+112) Diamonds" data-price="279111">
-          <span class="item-name">1048 (936+112) Diamonds<span class="item-code">MLBB_ID_1048</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="1067 (953+114) Diamonds" data-price="284136">
-          <span class="item-name">1067 (953+114) Diamonds<span class="item-code">MLBB_ID_1067</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="1136 (1006+130) Diamonds" data-price="296893">
-          <span class="item-name">1136 (1006+130) Diamonds<span class="item-code">MLBB_ID_1136</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="1358 (1206+152) Diamonds" data-price="357200">
-          <span class="item-name">1358 (1206+152) Diamonds<span class="item-code">MLBB_ID_1358</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="1506 (1339+167) Diamonds" data-price="397403">
-          <span class="item-name">1506 (1339+167) Diamonds<span class="item-code">MLBB_ID_1506</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="1704 (1509+195) Diamonds" data-price="445340">
-          <span class="item-name">1704 (1509+195) Diamonds<span class="item-code">MLBB_ID_1704</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="2010 (1708+302) Diamonds" data-price="494641">
-          <span class="item-name">2010 (1708+302) Diamonds<span class="item-code">MLBB_ID_2010</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="2380 (2041+339) Diamonds" data-price="595151">
-          <span class="item-name">2380 (2041+339) Diamonds<span class="item-code">MLBB_ID_2380</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="2578 (2211+367) Diamonds" data-price="643088">
-          <span class="item-name">2578 (2211+367) Diamonds<span class="item-code">MLBB_ID_2578</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="2855 (2461+394) Diamonds" data-price="718471">
-          <span class="item-name">2855 (2461+394) Diamonds<span class="item-code">MLBB_ID_2855</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="3146 (2714+432) Diamonds" data-price="791534">
-          <span class="item-name">3146 (2714+432) Diamonds<span class="item-code">MLBB_ID_3146</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="3423 (2964+459) Diamonds" data-price="866917">
-          <span class="item-name">3423 (2964+459) Diamonds<span class="item-code">MLBB_ID_3423</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="3738 (3247+491) Diamonds" data-price="952351">
-          <span class="item-name">3738 (3247+491) Diamonds<span class="item-code">MLBB_ID_3738</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="4020 (3416+604) Diamonds" data-price="989282">
-          <span class="item-name">4020 (3416+604) Diamonds<span class="item-code">MLBB_ID_4020</span></span>
-          <span class="item-price"></span>
-        </li>
-        <li data-item="4026 (3383+643) Diamonds" data-price="1029542">
-          <span class="item-name">4026 (3383+643) Diamonds<span class="item-code">MLBB_ID_4026</span></span>
-          <span class="item-price"></span>
-        </li>
-      </ul>
+      <div class="section-title">Weekly Pass</div>
+      <ul class="pricelist" id="listWeeklyPass"></ul>
+    </div>
+
+    <!-- SECTION: OTHER -->
+    <div class="section">
+      <div class="section-title">Lainnya</div>
+      <ul class="pricelist" id="listOthers"></ul>
     </div>
 
     <!-- FORM ORDER -->
@@ -544,7 +172,7 @@
           required
         />
 
-        <label for="nickname">Nickname in game:</label>
+        <label for="nickname">Nickname:</label>
         <input
           type="text"
           id="nickname"
@@ -552,20 +180,24 @@
           required
         />
 
-        <label for="orderItem">Jumlah order:</label>
-        <input
-          type="text"
-          id="orderItem"
-          placeholder="klik salah satu pricebox di atas"
-          required
-        />
+        <label for="orderSelect">Order:</label>
+        <select id="orderSelect" required>
+          <option value="" disabled selected>Pilih produk</option>
+        </select>
 
-        <label for="orderPrice">Harga:</label>
+        <label>Jumlah order:</label>
+        <div class="qty-wrapper">
+          <button type="button" class="qty-btn" onclick="changeQty(-1)">−</button>
+          <input type="number" id="orderQty" value="1" min="1" readonly />
+          <button type="button" class="qty-btn" onclick="changeQty(1)">+</button>
+        </div>
+
+        <label for="orderPrice">Total Harga:</label>
         <input
           type="text"
           id="orderPrice"
           placeholder="Rp 0"
-          required
+          readonly
         />
 
         <button type="submit">Kirim ke WhatsApp</button>
@@ -574,70 +206,361 @@
   </div>
 
   <script>
-    // Format Rp pakai titik
+    // =========================
+    // 1) FORMAT + SANITIZE
+    // =========================
     function formatRupiah(value) {
-      const numberString = String(value).replace(/[^0-9]/g, '');
+      var numberString = String(value).replace(/[^0-9]/g, '');
       if (!numberString) return '';
       return 'Rp ' + numberString.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
     }
 
-    // Autofill form dari pricebox yang diklik
-    function fillForm(item, price) {
-      const orderItemInput = document.getElementById('orderItem');
-      const orderPriceInput = document.getElementById('orderPrice');
-      if (orderItemInput) orderItemInput.value = item;
-      if (orderPriceInput) orderPriceInput.value = formatRupiah(price);
+    function parseNumber(value) {
+      var numberString = String(value).replace(/[^0-9]/g, '');
+      return numberString ? parseInt(numberString, 10) : 0;
     }
 
-    // Kirim form ke WhatsApp
-    function sendToWhatsApp(e) {
-      e.preventDefault();
-      const userId = document.getElementById('userId').value.trim();
-      const nickname = document.getElementById('nickname').value.trim();
-      const item = document.getElementById('orderItem').value.trim();
-      const price = document.getElementById('orderPrice').value.trim();
+    // =========================
+    // 2) MARKUP RULES (FINAL)
+    // =========================
+    function calcMarkup(basePrice) {
+      if (basePrice >= 1000 && basePrice <= 15000) {
+        return 800;
+      }
 
-      const message =
-        '**Order Diamond MLBB Indonesia**\n' +
-        'User ID (Server): ' + userId + '\n' +
-        'Nickname in game: ' + nickname + '\n' +
-        'Jumlah order: ' + item + '\n' +
-        'Harga: ' + price;
+      if (basePrice >= 16000 && basePrice <= 50000) {
+        var m2 = Math.round(basePrice * 0.05);
+        return Math.min(m2, 1200);
+      }
 
-      const phone = '6283197962700'; // 0831… → format internasional
-      const url = 'https://wa.me/' + phone + '?text=' + encodeURIComponent(message);
-      window.open(url, '_blank');
+      if (basePrice > 50000 && basePrice <= 140000) {
+        var m3 = Math.round(basePrice * 0.033);
+        return Math.min(m3, 2000);
+      }
+
+      if (basePrice > 140000 && basePrice <= 300000) {
+        return 2000;
+      }
+
+      if (basePrice > 300000 && basePrice <= 500000) {
+        var m5 = Math.round(basePrice * 0.008);
+        return Math.min(m5, 4000);
+      }
+
+      // linear 500k–700k: 3500 → 6000
+      if (basePrice > 500000 && basePrice <= 700000) {
+        var minPrice = 500000;
+        var maxPrice = 700000;
+        var minMarkup = 3500;
+        var maxMarkup = 6000;
+
+        var ratio = (basePrice - minPrice) / (maxPrice - minPrice);
+        var markup = minMarkup + ratio * (maxMarkup - minMarkup);
+        return Math.round(markup);
+      }
+
+      // 700k–900k: 0.85% no max
+      if (basePrice > 700000 && basePrice <= 900000) {
+        return Math.round(basePrice * 0.0085);
+      }
+
+      // default kalau di luar range rules
+      return 0;
     }
 
-    // Inisialisasi: format harga di list + pasang event klik
-    document.addEventListener('DOMContentLoaded', function () {
-      const items = document.querySelectorAll('.pricelist li');
-      items.forEach(function (li) {
-        const item = li.getAttribute('data-item');
-        const price = li.getAttribute('data-price');
-        const priceSpan = li.querySelector('.item-price');
+    function calcFinalPrice(basePrice) {
+      return basePrice + calcMarkup(basePrice);
+    }
 
-        if (priceSpan && price) {
-          priceSpan.textContent = formatRupiah(price);
+    // =========================
+    // 3) DATA PRICELIST (BASE)
+    // =========================
+    var PRODUCTS = [
+      { code: "MLBB_ID_5", item: "5 (5+0) Diamonds", price: 1458 },
+      { code: "MLBB_ID_10", item: "10 (9+1) Diamonds", price: 2957 },
+      { code: "MLBB_ID_12", item: "12 (11+1) Diamonds", price: 3402 },
+      { code: "MLBB_ID_14", item: "14 (13+1) Diamonds", price: 3942 },
+      { code: "MLBB_ID_15", item: "15 (15+0) Diamonds", price: 4373 },
+      { code: "MLBB_ID_17", item: "17 (16+1) Diamonds", price: 4543 },
+      { code: "MLBB_ID_18", item: "18 (17+1) Diamonds", price: 4927 },
+      { code: "MLBB_ID_19", item: "19 (17+2) Diamonds", price: 5345 },
+      { code: "MLBB_ID_20", item: "20 (18+2) Diamonds", price: 5914 },
+      { code: "MLBB_ID_22", item: "22 (20+2) Diamonds", price: 6358 },
+      { code: "MLBB_ID_28", item: "28 (25+3) Diamonds", price: 7775 },
+      { code: "MLBB_ID_30", item: "30 (28+2) Diamonds", price: 8329 },
+      { code: "MLBB_ID_33", item: "33 (30+3) Diamonds", price: 9086 },
+      { code: "MLBB_ID_36", item: "36 (33+3) Diamonds", price: 9853 },
+      { code: "MLBB_ID_34", item: "34 (31+3) Diamonds", price: 9855 },
+      { code: "MLBB_ID_44", item: "44 (40+4) Diamonds", price: 11662 },
+      { code: "MLBB_ID_42", item: "42 (38+4) Diamonds", price: 11717 },
+      { code: "MLBB_ID_45", item: "45 (42+3) Diamonds", price: 12743 },
+      { code: "MLBB_ID_46", item: "46 (42+4) Diamonds", price: 12810 },
+      { code: "MLBB_ID_50", item: "50 (46+4) Diamonds", price: 13628 },
+      { code: "MLBB_ID_54", item: "54 (49+5) Diamonds", price: 14619 },
+      { code: "MLBB_ID_56", item: "56 (51+5) Diamonds", price: 15063 },
+      { code: "MLBB_ID_59", item: "59 (53+6) Diamonds", price: 15549 },
+
+      { code: "MLBB_ID_100TU", item: "100 (50+50) Diamonds - First Top Up", price: 15949 },
+
+      { code: "MLBB_ID_60", item: "60 (55+5) Diamonds", price: 16751 },
+      { code: "MLBB_ID_64", item: "64 (58+6) Diamonds", price: 17007 },
+      { code: "MLBB_ID_67", item: "67 (62+5) Diamonds", price: 18046 },
+      { code: "MLBB_ID_65", item: "65 (59+6) Diamonds", price: 18155 },
+      { code: "MLBB_ID_66", item: "66 (61+5) Diamonds", price: 18169 },
+      { code: "MLBB_ID_71", item: "71 (64+7) Diamonds", price: 18951 },
+      { code: "MLBB_ID_70", item: "70 (64+6) Diamonds", price: 19612 },
+      { code: "MLBB_ID_74", item: "74 (67+7) Diamonds", price: 19705 },
+      { code: "MLBB_ID_78", item: "78 (70+8) Diamonds", price: 20894 },
+      { code: "MLBB_ID_75", item: "75 (68+7) Diamonds", price: 21111 },
+      { code: "MLBB_ID_80", item: "80 (73+7) Diamonds", price: 21514 },
+      { code: "MLBB_ID_85", item: "85 (77+8) Diamonds", price: 22353 },
+      { code: "MLBB_ID_84", item: "84 (76+8) Diamonds", price: 22661 },
+      { code: "MLBB_ID_83", item: "83 (75+8) Diamonds", price: 22711 },
+      { code: "MLBB_ID_88", item: "88 (80+8) Diamonds", price: 23646 },
+      { code: "MLBB_ID_89", item: "89 (81+8) Diamonds", price: 23877 },
+      { code: "MLBB_ID_92", item: "92 (84+8) Diamonds", price: 24632 },
+      { code: "MLBB_ID_98", item: "98 (89+9) Diamonds", price: 26507 },
+      { code: "MLBB_ID_100", item: "100 (91+9) Diamonds", price: 26767 },
+
+      { code: "MLBB_ID_WDP", item: "Weekly Diamond Pass", price: 27800 },
+
+      { code: "MLBB_ID_110", item: "110 (100+10) Diamonds", price: 29557 },
+      { code: "MLBB_ID_113", item: "113 (102+11) Diamonds", price: 30128 },
+      { code: "MLBB_ID_112", item: "112 (101+11) Diamonds", price: 30436 },
+      { code: "MLBB_ID_116", item: "116 (105+11) Diamonds", price: 31421 },
+      { code: "MLBB_ID_129", item: "129 (117+12) Diamonds", price: 34014 },
+      { code: "MLBB_ID_128", item: "128 (116+12) Diamonds", price: 34323 },
+      { code: "MLBB_ID_148", item: "148 (134+14) Diamonds", price: 39409 },
+      { code: "MLBB_ID_170", item: "170 (154+16) Diamonds", price: 44704 },
+      { code: "MLBB_ID_176", item: "176 (160+16) Diamonds", price: 47292 },
+
+      { code: "MLBB_ID_300TU", item: "300 (150+150) Diamonds - First Top Up", price: 47697 },
+
+      { code: "MLBB_ID_184", item: "184 (167+17) Diamonds", price: 50468 },
+      { code: "MLBB_ID_WDPX2", item: "2x Weekly Diamond Pass", price: 56238 },
+      { code: "MLBB_ID_222", item: "222 (200+22) Diamonds", price: 59113 },
+      { code: "MLBB_ID_240", item: "240 (217+23) Diamonds", price: 63035 },
+      { code: "MLBB_ID_241", item: "241 (218+23) Diamonds", price: 64512 },
+      { code: "MLBB_ID_277", item: "277 (250+27) Diamonds", price: 73892 },
+      { code: "MLBB_ID_284", item: "284 (257+27) Diamonds", price: 74696 },
+      { code: "MLBB_ID_296", item: "296 (256+40) Diamonds", price: 77565 },
+
+      { code: "MLBB_ID_500TU", item: "500 (250+250) Diamonds - First Top Up", price: 79595 },
+
+      { code: "MLBB_ID_305", item: "305 (276+29) Diamonds", price: 81775 },
+      { code: "MLBB_ID_WDPX3", item: "3x Weekly Diamond Pass", price: 84356 },
+      { code: "MLBB_ID_370", item: "370 (333+37) Diamonds", price: 98521 },
+      { code: "MLBB_ID_366", item: "366 (333+33) Diamonds", price: 100936 },
+      { code: "MLBB_ID_384", item: "384 (346+38) Diamonds", price: 102463 },
+      { code: "MLBB_ID_408", item: "408 (367+41) Diamonds", price: 106674 },
+      { code: "MLBB_ID_406", item: "406 (366+40) Diamonds", price: 108374 },
+      { code: "MLBB_ID_WDPX4", item: "4x Weekly Diamond Pass", price: 112475 },
+      { code: "MLBB_ID_518", item: "518 (467+51) Diamonds", price: 137930 },
+      { code: "MLBB_ID_WDPX5", item: "5x Weekly Diamond Pass", price: 140593 },
+      { code: "MLBB_ID_TP", item: "Twilight Pass", price: 145497 },
+      { code: "MLBB_ID_568", item: "568 (503+65) Diamonds", price: 145497 },
+      { code: "MLBB_ID_554", item: "554 (500+54) Diamonds", price: 147784 },
+
+      { code: "MLBB_ID_1000TU", item: "1000 (500+500) Diamonds - First Top Up", price: 159935 },
+
+      { code: "MLBB_ID_716", item: "716 (637+79) Diamonds", price: 184905 },
+      { code: "MLBB_ID_750", item: "750 (668+82) Diamonds", price: 193602 },
+      { code: "MLBB_ID_749", item: "749 (671+78) Diamonds", price: 201872 },
+      { code: "MLBB_ID_790", item: "790 (703+87) Diamonds", price: 204609 },
+      { code: "MLBB_ID_875", item: "875 (774+101) Diamonds", price: 223019 },
+      { code: "MLBB_ID_874", item: "874 (779+95) Diamonds", price: 227270 },
+      { code: "MLBB_ID_966", item: "966 (836+130) Diamonds", price: 246302 },
+      { code: "MLBB_ID_1048", item: "1048 (936+112) Diamonds", price: 273574 },
+      { code: "MLBB_ID_1067", item: "1067 (953+114) Diamonds", price: 278501 },
+      { code: "MLBB_ID_1136", item: "1136 (1006+130) Diamonds", price: 290993 },
+      { code: "MLBB_ID_1358", item: "1358 (1206+152) Diamonds", price: 350105 },
+      { code: "MLBB_ID_1506", item: "1506 (1339+167) Diamonds", price: 389514 },
+      { code: "MLBB_ID_1704", item: "1704 (1509+195) Diamonds", price: 436489 },
+      { code: "MLBB_ID_2010", item: "2010 (1708+302) Diamonds", price: 484824 },
+      { code: "MLBB_ID_2380", item: "2380 (2041+339) Diamonds", price: 583345 },
+      { code: "MLBB_ID_2578", item: "2578 (2211+367) Diamonds", price: 630321 },
+      { code: "MLBB_ID_2855", item: "2855 (2461+394) Diamonds", price: 704213 },
+      { code: "MLBB_ID_3146", item: "3146 (2714+432) Diamonds", price: 775817 },
+      { code: "MLBB_ID_3423", item: "3423 (2964+459) Diamonds", price: 849709 },
+      { code: "MLBB_ID_3738", item: "3738 (3247+491) Diamonds", price: 933450 },
+      { code: "MLBB_ID_4020", item: "4020 (3416+604) Diamonds", price: 969648 },
+      { code: "MLBB_ID_4026", item: "4026 (3383+643) Diamonds", price: 1009355 },
+      { code: "MLBB_ID_4830", item: "4830 (4003+827) Diamonds", price: 1163446 }
+    ];
+
+    // =========================
+    // 4) RENDER LIST + SELECT
+    // =========================
+    function createLi(product) {
+      var finalPrice = calcFinalPrice(product.price);
+
+      var li = document.createElement("li");
+      li.setAttribute("data-item", product.item);
+      li.setAttribute("data-code", product.code);
+      li.setAttribute("data-base", String(product.price));
+      li.setAttribute("data-price", String(finalPrice));
+
+      li.innerHTML =
+        '<span class="item-name">' +
+          product.item +
+          '<span class="item-code">' + product.code + '</span>' +
+        '</span>' +
+        '<span class="item-price">' + formatRupiah(finalPrice) + '</span>';
+
+      li.addEventListener("click", function () {
+        selectProduct(product.item);
+        var form = document.getElementById("orderForm");
+        if (form) {
+          form.scrollIntoView({ behavior: "smooth", block: "start" });
         }
-
-        li.addEventListener('click', function () {
-          fillForm(item, price);
-          // scroll dikit ke form (opsional)
-          const form = document.getElementById('orderForm');
-          if (form) {
-            form.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }
-        });
       });
 
-      // kalau user ketik manual harga, tetap diformat Rp x.xxx
-      const priceInput = document.getElementById('orderPrice');
-      if (priceInput) {
-        priceInput.addEventListener('input', function () {
-          this.value = formatRupiah(this.value);
-        });
+      return li;
+    }
+
+    function isFirstTopUp(itemName) {
+      return String(itemName || "").toLowerCase().indexOf("first top up") !== -1;
+    }
+
+    function isWeeklyPass(itemName) {
+      return String(itemName || "").toLowerCase().indexOf("weekly") !== -1;
+    }
+
+    function isDiamond(itemName) {
+      return String(itemName || "").toLowerCase().indexOf("diamond") !== -1;
+    }
+
+    function renderAll() {
+      var listFirstTopUp = document.getElementById("listFirstTopUp");
+      var listDiamonds = document.getElementById("listDiamonds");
+      var listWeeklyPass = document.getElementById("listWeeklyPass");
+      var listOthers = document.getElementById("listOthers");
+      var select = document.getElementById("orderSelect");
+
+      if (!listFirstTopUp || !listDiamonds || !listWeeklyPass || !listOthers || !select) return;
+
+      listFirstTopUp.innerHTML = "";
+      listDiamonds.innerHTML = "";
+      listWeeklyPass.innerHTML = "";
+      listOthers.innerHTML = "";
+      select.innerHTML = '<option value="" disabled selected>Pilih produk</option>';
+
+      for (var i = 0; i < PRODUCTS.length; i++) {
+        var p = PRODUCTS[i];
+
+        // add to select
+        var finalPrice = calcFinalPrice(p.price);
+        var opt = document.createElement("option");
+        opt.value = p.item;
+        opt.setAttribute("data-price", String(finalPrice));
+        opt.textContent = p.item;
+        select.appendChild(opt);
+
+        // add to list
+        var li = createLi(p);
+
+        if (isFirstTopUp(p.item)) {
+          listFirstTopUp.appendChild(li);
+        } else if (isWeeklyPass(p.item)) {
+          listWeeklyPass.appendChild(li);
+        } else if (isDiamond(p.item)) {
+          listDiamonds.appendChild(li);
+        } else {
+          listOthers.appendChild(li);
+        }
       }
+    }
+
+    function selectProduct(item) {
+      var select = document.getElementById("orderSelect");
+      var qtyInput = document.getElementById("orderQty");
+      if (!select) return;
+
+      for (var i = 0; i < select.options.length; i++) {
+        if (select.options[i].value === item) {
+          select.selectedIndex = i;
+          break;
+        }
+      }
+
+      if (qtyInput) qtyInput.value = 1;
+      updateTotal();
+    }
+
+    // =========================
+    // 5) TOTAL + QTY
+    // =========================
+    function updateTotal() {
+      var select = document.getElementById("orderSelect");
+      var qtyInput = document.getElementById("orderQty");
+      var priceInput = document.getElementById("orderPrice");
+      if (!select || !qtyInput || !priceInput) return;
+
+      var option = select.options[select.selectedIndex];
+      if (!option || !option.getAttribute("data-price")) {
+        priceInput.value = "";
+        return;
+      }
+
+      var basePrice = parseInt(option.getAttribute("data-price"), 10) || 0;
+      var qty = parseInt(qtyInput.value, 10) || 1;
+
+      var total = basePrice * qty;
+      priceInput.value = formatRupiah(total);
+    }
+
+    function changeQty(delta) {
+      var qtyInput = document.getElementById("orderQty");
+      if (!qtyInput) return;
+
+      var current = parseInt(qtyInput.value, 10) || 1;
+      current += delta;
+      if (current < 1) current = 1;
+
+      qtyInput.value = current;
+      updateTotal();
+    }
+
+    // =========================
+    // 6) SEND WA
+    // =========================
+    function sendToWhatsApp(e) {
+      e.preventDefault();
+
+      var userId = document.getElementById("userId").value.trim();
+      var nickname = document.getElementById("nickname").value.trim();
+      var select = document.getElementById("orderSelect");
+      var qty = document.getElementById("orderQty").value.trim();
+      var price = document.getElementById("orderPrice").value.trim();
+
+      var orderText = "";
+      if (select && select.value) orderText = select.value;
+
+      var message =
+        "**Order Diamond MLBB Indonesia**\n" +
+        "User ID (Server): " + userId + "\n" +
+        "Nickname: " + nickname + "\n" +
+        "Order: " + orderText + "\n" +
+        "Jumlah: x" + qty + "\n" +
+        "Total Harga: " + price;
+
+      var phone = "6283197962700";
+      var url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
+      window.open(url, "_blank");
+    }
+
+    // =========================
+    // 7) INIT
+    // =========================
+    document.addEventListener("DOMContentLoaded", function () {
+      renderAll();
+
+      var select = document.getElementById("orderSelect");
+      if (select) {
+        select.addEventListener("change", updateTotal);
+      }
+
+      updateTotal();
     });
   </script>
 </body>
